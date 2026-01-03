@@ -1,0 +1,201 @@
+
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayaulym | Lex Financia</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS СТИЛЬДЕРІ --- */
+        :root {
+            --gold: #D4AF37;
+            --black: #0a0a0a;
+            --gray: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-logo {
+            width: 250px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px var(--gold));
+        }
+
+        .glitter-text {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle { color: #888; margin-bottom: 30px; font-size: 1.1rem; }
+
+        /* Қызметтер */
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        .price-card {
+            background: var(--gray);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--gold);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .price-card:hover {
+            transform: scale(1.02);
+            background: #252525;
+        }
+
+        .service-name { font-weight: bold; font-size: 1.1rem; }
+        .service-price { color: var(--gold); font-weight: 800; font-size: 1.2rem; }
+
+        /* Батырмалар */
+        .contact-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-wa { background: #25D366; color: white; }
+        .btn-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
+        .btn-mail { background: var(--gold); color: black; }
+
+        /* WA Float */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="image.jpeg" alt="Ayaulym Logo" class="main-logo">
+        <h1 class="glitter-text">AYAULYM</h1>
+        <p class="subtitle">Аресттерді шешу және қаржылық көмек</p>
+    </section>
+
+    <div class="container">
+        <h2 style="text-align: center; color: var(--gold); margin-bottom: 30px;">ҚЫЗМЕТТЕР</h2>
+        
+        <div class="price-card" onclick="sendWA('Арест шешу')">
+            <span class="service-name">Арест шешу</span>
+            <span class="service-price">5 000 ₸</span>
+        </div>
+        <div class="price-card" onclick="sendWA('Сот арқылы арест')">
+            <span class="service-name">Сот арқылы арест</span>
+            <span class="service-price">10 000 ₸</span>
+        </div>
+        <div class="price-card" onclick="sendWA('График МФО')">
+            <span class="service-name">График МФО</span>
+            <span class="service-price">8 000 ₸</span>
+        </div>
+        <div class="price-card" onclick="sendWA('График Банк')">
+            <span class="service-name">График Банк</span>
+            <span class="service-price">10 000 ₸</span>
+        </div>
+        <div class="price-card" onclick="sendWA('Жедел график')">
+            <span class="service-name">Жедел график</span>
+            <span class="service-price">12 000 ₸+</span>
+        </div>
+        <div class="price-card" onclick="sendWA('Рейтинг көтеру')">
+            <span class="service-name">Рейтинг көтеру</span>
+            <span class="service-price">Келісім бойынша</span>
+        </div>
+        <div class="price-card" onclick="sendWA('Автостраховка қайтару')">
+            <span class="service-name">Автостраховка қайтару</span>
+            <span class="service-price">% бойынша</span>
+        </div>
+
+        <div class="contact-btns">
+            <a href="https://wa.me/77088147689" class="btn btn-wa">
+                <i class="fab fa-whatsapp"></i> WhatsApp-қа өту
+            </a>
+            <a href="https://instagram.com/aiaulym_aiazkhanova" class="btn btn-insta">
+                <i class="fab fa-instagram"></i> Instagram парақша
+            </a>
+            <a href="mailto:info@example.com" class="btn btn-mail">
+                <i class="fas fa-envelope"></i> Почтаға жазу
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/77088147689" class="wa-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        &copy; 2026 LEX FINANCIA. Барлық құқықтар қорғалған.
+    </footer>
+
+    <script>
+        function sendWA(service) {
+            const phone = "77088147689";
+            const text = "Сәлеметсіз бе! Маған мына қызмет бойынша көмек керек: " + service;
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), "_blank");
+        }
+    </script>
+</body>
+</html>
